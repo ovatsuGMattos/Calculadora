@@ -8,9 +8,9 @@ namespace Calculadora.ConsoleApp
             while (true) // enquanto verdadeiro for verdadeiro
             {
                 Console.Clear();
-                Console.WriteLine("--------------------------------");
+                Console.WriteLine("-------------------------------");
                 Console.WriteLine("Calculadora Tabajara 2025");
-                Console.WriteLine("--------------------------------");
+                Console.WriteLine("-------------------------------");
 
                 Console.WriteLine("1 - Somar");
                 Console.WriteLine("2 - Subtrair");
