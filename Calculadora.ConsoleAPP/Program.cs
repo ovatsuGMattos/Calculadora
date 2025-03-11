@@ -5,6 +5,9 @@ namespace Calculadora.ConsoleApp
     {
         static void Main(string[] args)
         {
+            string[] historicoOperacoes = new string [100]; //arreios
+            int contadorHistorico = 0;
+
             while (true) // enquanto verdadeiro for verdadeiro
             {
                 Console.Clear();
@@ -17,6 +20,7 @@ namespace Calculadora.ConsoleApp
                 Console.WriteLine("3 - Multiplicação");
                 Console.WriteLine("4 - Divisão");
                 Console.WriteLine("5 - Tabuada");
+                Console.WriteLine("6 - Histórico de Operações");
                 Console.WriteLine("S - Sair");
 
                 Console.WriteLine();
@@ -47,8 +51,26 @@ namespace Calculadora.ConsoleApp
 
                     continue;
                 }
+                else if (opcao == "6")
+                {
+                    Console.WriteLine("--------------------------------");
+                    Console.WriteLine("Historico de Operações");
+                    Console.WriteLine("--------------------------------");
 
-                Console.Write("Digite o primeiro número: ");
+                    for (int contador=0; contador <historicoOperacoes.Length; contador++ )
+                    {
+                        string valorAtual = historicoOperacoes[contador];
+                        
+                        if (valorAtual !=null)
+                            Console.WriteLine(historicoOperacoes[contador]);
+                    }
+
+                    Console.WriteLine("Aperte ENTER para continuar");
+                    Console.ReadLine();
+                    continue;
+                }
+
+                    Console.Write("Digite o primeiro número: ");
                 string primeiroNumeroString = Console.ReadLine();
                 decimal primeiroNumero = Convert.ToDecimal(primeiroNumeroString);
 
@@ -59,13 +81,22 @@ namespace Calculadora.ConsoleApp
                 decimal resultado = 0;
 
                 if (opcao == "1")
+                {
                     resultado = primeiroNumero + segundoNumero;
+                    historicoOperacoes[contadorHistorico] = $"{primeiroNumero} + {segundoNumero} = {resultado}";
+                }
 
                 else if (opcao == "2")
+                {
                     resultado = primeiroNumero - segundoNumero;
+                    historicoOperacoes[contadorHistorico] = $"{primeiroNumero} - {segundoNumero} = {resultado}";
+                }
 
                 else if (opcao == "3")
+                {
                     resultado = primeiroNumero * segundoNumero;
+                    historicoOperacoes[contadorHistorico] = $"{primeiroNumero} * {segundoNumero} = {resultado}";
+                }
 
                 else if (opcao == "4")
                 {
@@ -77,6 +108,7 @@ namespace Calculadora.ConsoleApp
                     }
 
                     resultado = primeiroNumero / segundoNumero;
+                    historicoOperacoes[contadorHistorico] = $"{primeiroNumero} / {segundoNumero} = {resultado}";
                 }
 
                 Console.WriteLine("--------------------------------");
