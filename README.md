@@ -4,6 +4,9 @@
 
 Calculadora capaz de realizar as operações básicas de matemática de forma simples e rápida.
 
+
+![](https://i.imgur.com/PloW6V6.gif)
+
 ## Funções
 
 - Somas
